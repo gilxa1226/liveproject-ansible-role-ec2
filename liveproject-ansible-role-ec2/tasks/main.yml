@@ -1,0 +1,21 @@
+---
+# tasks file for liveproject-ansible-role-ec2
+- name: manage ec2 instance
+  amazon.aws.ec2:
+    key_name: liveproject
+    instance_type: t2.micro
+    image: ami-03d64741867e7bb94
+    wait: yes
+    count: 1
+    vpc_subnet_id: subnet-02b8f75f9cedc6335
+    assign_public_ip: yes
+    state: {{ state }}
+    instance_tags:
+      name: {{ name }}
+      cluster: 'none'
+      creator: 'ansible'
+      environment: 'dev'
+      expires: 'never'
+      management: 'awx'
+      project: 'libeproject'
+      service: 'test instance'
