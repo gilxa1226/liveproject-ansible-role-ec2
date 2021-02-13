@@ -1,2 +1,5 @@
 ---
 # defaults file for liveproject-ansible-role-ec2
+region: "us-east-2"
+quantity: 3
+mode: "create"
